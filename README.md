@@ -1,7 +1,7 @@
 # shape2path
 [![Build Status](https://travis-ci.org/HarryStevens/shape2path.svg?branch=master)](https://travis-ci.org/HarryStevens/shape2path)
 
-Convert SVG circle to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
+Convert SVG shapes to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
 ### npm
