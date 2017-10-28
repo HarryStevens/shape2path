@@ -1,0 +1,37 @@
+{
+  "name": "shape2path",
+  "version": "0.0.1",
+  "description": "Convert SVG shapes to SVG paths",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "minify": "uglifyjs index.js --comments -c -m -o index.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarryStevens/shape2path.git"
+  },
+  "keywords": [
+    "svg"
+  ],
+  "author": "Harry Stevens <harryjosephstevens@gmail.com> (http://harryjstevens.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HarryStevens/shape2path/issues"
+  },
+  "homepage": "https://github.com/HarryStevens/shape2path#readme",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "uglifyjs": "^2.4.11"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
