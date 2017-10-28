@@ -1,5 +1,5 @@
 # shape2path
-Convert SVG circle to SVG paths. Check out this demo.
+Convert SVG circle to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
 ```bash
@@ -15,7 +15,7 @@ You can use the CDN from unpkg.
 <script src="https://unpkg.com/shape2path/lib/shape2path.js"></script>
 <script src="https://unpkg.com/shape2path/lib/shape2path.min.js"></script>
 ```
-If you'd rather host it yourself, download `jeezy.js` or `jeezy.min.js` from the [`lib` directory](https://github.com/HarryStevens/jeezy/tree/master/lib).
+If you'd rather host it yourself, download `shape2path.js` or `shape2path.min.js` from the [`lib` directory](https://github.com/HarryStevens/shape2path/tree/master/lib).
 ```html
 <script src="path/to/shape2path.js"></script>
 <script src="path/to/shape2path.min.js"></script>
