@@ -31,6 +31,10 @@ shape2path's functions take an options object whose properties correspond to the
 
 Draw a path shaped like a [circle](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle).
 
+<a name="ellipse" href="#ellipse">#</a> shape2path.**ellipse**(*options*)
+
+Draw a path shaped like an [ellipse](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse).
+
 <a name="rect" href="#rect">#</a> shape2path.**rect**(*options*)
 
 Draw a path shaped like a [rectangle](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect). Add `rx` or `ry` properties to the options to round the corners.

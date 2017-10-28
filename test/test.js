@@ -17,4 +17,8 @@ describe("#shape2path", function() {
 	it ("should convert a rounded rect with only one rounded attribute specified to a path", function(){
 		expect(shape2path.rect({x: 120, y: 340, width: 100, height: 100, rx: 15})).to.equal("M135,340 H205 C205,340 220,340 220,355 V425 C220,425 220,440 205,440 H135 C135,440 120,440 120,425 V355 C120,355 120,340 135,340");
 	});
+
+	it ("should convert an ellipse to a path", function(){
+		expect(shape2path.ellipse({cx:60, cy:120, rx:50, ry:25})).to.equal("M10,120 a50,25 0 1,0 100,0 a50,25 0 1,0 -100,0");
+	})
 });
