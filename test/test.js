@@ -27,6 +27,10 @@ describe("#shape2path", function() {
 	});
 
 	it ("should convert a polygon to a path", function(){
-		expect(shape2path.polygon({points: "60,20 100,40 100,80 60,100 20,80 20,40"})).to.equal("M60,20 L100,40 L100,80 L60,100 L20,80 L20,40");
+		expect(shape2path.polygon({points: "60,20 100,40 100,80 60,100 20,80 20,40"})).to.equal("M60,20 L100,40 L100,80 L60,100 L20,80 L20,40 Z");
+	});
+
+	it ("should convert a polyline to a path", function(){
+		expect(shape2path.polyline({points: "270,100 290,60 320,80 350,20"})).to.equal("M270,100 L290,60 L320,80 L350,20");
 	});
 });

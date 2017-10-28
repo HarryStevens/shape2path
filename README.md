@@ -1,7 +1,7 @@
 # shape2path
 [![Build Status](https://travis-ci.org/HarryStevens/shape2path.svg?branch=master)](https://travis-ci.org/HarryStevens/shape2path)
 
-Convert SVG shapes to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
+Convert SVG's [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Basic_shapes) to SVG [paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
 ### npm
@@ -34,6 +34,18 @@ Draw a path shaped like a [circle](https://developer.mozilla.org/en-US/docs/Web/
 <a name="ellipse" href="#ellipse">#</a> shape2path.**ellipse**(*options*)
 
 Draw a path shaped like an [ellipse](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse).
+
+<a name="line" href="#line">#</a> shape2path.**line**(*options*)
+
+Draw a path shaped like a [line](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line).
+
+<a name="polygon" href="#polygon">#</a> shape2path.**polygon**(*options*)
+
+Draw a path shaped like a [polygon](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon).
+
+<a name="polyline" href="#polyline">#</a> shape2path.**polyline**(*options*)
+
+Draw a path shaped like a [polyline](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline).
 
 <a name="rect" href="#rect">#</a> shape2path.**rect**(*options*)
 
