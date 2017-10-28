@@ -4,6 +4,7 @@
 Convert SVG circle to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
+###npm
 ```bash
 npm install shape2path --save
 ```
@@ -23,7 +24,7 @@ If you'd rather host it yourself, download `shape2path.js` or `shape2path.min.js
 <script src="path/to/shape2path.min.js"></script>
 ```
 
-### API
+## API
 shape2path's functions take an options object whose properties correspond to the attributes of an SVG shape and returns an SVG path's `d` attribute.
 
 <a name="circle" href="#circle">#</a> shape2path.**circle**(*options*)
