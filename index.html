@@ -6,14 +6,9 @@
 <body>
 <svg width="440" height="440"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://unpkg.com/shape2path/lib/shape2path.min.js"></script>
 <script>
-
-</script>
-<script>
-	d3.select("svg").append("circle")
-			.attr("cx", 20)
-			.attr("cy", 20)
-			.attr("r", 20);
+	d3.select("svg").append("circle").attr("cx", 20).attr("cy", 20).attr("r", 20);
 
 	d3.select("svg").append("path")
 			.attr("d", shape2path.circle({cx: 65, cy: 20, r: 20}));

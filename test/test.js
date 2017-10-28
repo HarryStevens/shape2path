@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var shape2path = require("../index");
+var shape2path = require("../lib/shape2path");
 
 describe("#shape2path", function() {
 	it ("should convert a circle to a path", function(){

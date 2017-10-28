@@ -2,11 +2,11 @@
   "name": "shape2path",
   "version": "0.0.1",
   "description": "Convert SVG shapes to SVG paths",
-  "main": "index.js",
+  "main": "lib/shape2path.js",
   "scripts": {
     "test": "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "minify": "uglifyjs index.js --comments -c -m -o index.min.js"
+    "minify": "uglifyjs lib/shape2path.js --comments -c -m -o lib/shape2path.min.js"
   },
   "repository": {
     "type": "git",
