@@ -25,7 +25,7 @@ If you'd rather host it yourself, download `shape2path.js` or `shape2path.min.js
 ```
 
 ## API
-shape2path's functions take an options object whose properties correspond to the attributes of an SVG shape and returns an SVG path's `d` attribute.
+shape2path's functions all take a single argument: an options object whose properties correspond to the attributes of an SVG shape. Likewise, they all return a single string: an SVG path's `d` attribute.
 
 <a name="circle" href="#circle">#</a> shape2path.**circle**(*options*)
 
