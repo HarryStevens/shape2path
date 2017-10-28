@@ -20,5 +20,9 @@ describe("#shape2path", function() {
 
 	it ("should convert an ellipse to a path", function(){
 		expect(shape2path.ellipse({cx:60, cy:120, rx:50, ry:25})).to.equal("M10,120 a50,25 0 1,0 100,0 a50,25 0 1,0 -100,0");
-	})
+	});
+
+	it ("should convert a line to a path", function(){
+		expect(shape2path.line({x1: 20, x2: 100, y1: 110, y2: 30})).to.equal("M20,110 L100,30");
+	});
 });
