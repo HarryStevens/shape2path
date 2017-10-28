@@ -1,109 +1,109 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<style>
-			body {
-				margin: auto;
-				display: table;
-			}
-			svg {
-				margin-top: 10px;
-			}
-		</style>
-	</head>
-	<body>
-		<svg width="440" height="440"></svg>
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="https://unpkg.com/shape2path/lib/shape2path.min.js"></script>
-		<script>
-			var svg = d3.select("svg");
+  <head>
+    <style>
+      body {
+        margin: auto;
+        display: table;
+      }
+      svg {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="440" height="440"></svg>
+    <script src="https://unpkg.com/d3-selection@1.1.0/build/d3-selection.min.js"></script>
+    <script src="https://unpkg.com/shape2path@1.0.2/lib/shape2path.min.js"></script>
+    <script>
+      var svg = d3.select("svg");
 
-			svg.append("circle")
-					.attr("cx", 20)
-					.attr("cy", 20)
-					.attr("r", 20);
+      svg.append("circle")
+          .attr("cx", 20)
+          .attr("cy", 20)
+          .attr("r", 20);
 
-			svg.append("path")
-					.attr("transform", "translate(45, 0)")
-					.attr("d", shape2path.circle({cx: 20, cy: 20, r: 20}));
-				
-			svg.append("rect")
-					.attr("x", 0)
-					.attr("y", 70)
-					.attr("width", 40)
-					.attr("height", 40);
+      svg.append("path")
+          .attr("transform", "translate(45, 0)")
+          .attr("d", shape2path.circle({cx: 20, cy: 20, r: 20}));
+        
+      svg.append("rect")
+          .attr("x", 0)
+          .attr("y", 70)
+          .attr("width", 40)
+          .attr("height", 40);
 
-			svg.append("path")
-					.attr("transform", "translate(45, 0)")
-					.attr("d", shape2path.rect({x: 0, y: 70, width: 40, height: 40}));
+      svg.append("path")
+          .attr("transform", "translate(45, 0)")
+          .attr("d", shape2path.rect({x: 0, y: 70, width: 40, height: 40}));
 
-			svg.append("rect")	
-					.attr("x", 0)
-					.attr("y", 120)
-					.attr("width", 200)
-					.attr("height", 200)
-					.attr("rx", 20)
-					.attr("ry", 10);
+      svg.append("rect")  
+          .attr("x", 0)
+          .attr("y", 120)
+          .attr("width", 200)
+          .attr("height", 200)
+          .attr("rx", 20)
+          .attr("ry", 10);
 
-			svg.append("path")
-					.attr("transform", "translate(220, 0)")
-					.attr("d", shape2path.rect({x: 0, y: 120, width: 200, height: 200, rx: 20, ry: 10}));
+      svg.append("path")
+          .attr("transform", "translate(220, 0)")
+          .attr("d", shape2path.rect({x: 0, y: 120, width: 200, height: 200, rx: 20, ry: 10}));
 
-			svg.append("rect")
-					.attr("x", 0)
-					.attr("y", 340)
-					.attr("width", 100)
-					.attr("height", 100)
-					.attr("rx", 15);
+      svg.append("rect")
+          .attr("x", 0)
+          .attr("y", 340)
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("rx", 15);
 
-			svg.append("path")
-					.attr("transform", "translate(120, 0)")
-					.attr("d", shape2path.rect({x: 0, y: 340, width: 100, height: 100, rx: 15}));
+      svg.append("path")
+          .attr("transform", "translate(120, 0)")
+          .attr("d", shape2path.rect({x: 0, y: 340, width: 100, height: 100, rx: 15}));
 
-			svg.append("ellipse")
-					.attr("cx", 150)
-					.attr("cy", 25)
-					.attr("rx", 50)
-					.attr("ry", 25);
+      svg.append("ellipse")
+          .attr("cx", 150)
+          .attr("cy", 25)
+          .attr("rx", 50)
+          .attr("ry", 25);
 
-			svg.append("path")
-					.attr("transform", "translate(0, 55)")
-					.attr("d", shape2path.ellipse({cx: 150, cy: 25, rx: 50, ry: 25}));
+      svg.append("path")
+          .attr("transform", "translate(0, 55)")
+          .attr("d", shape2path.ellipse({cx: 150, cy: 25, rx: 50, ry: 25}));
 
-			svg.append("line")
-					.attr("x1", 220)
-					.attr("x2", 300)
-					.attr("y1", 100)
-					.attr("y2", 00)
-					.style("stroke", "black");
+      svg.append("line")
+          .attr("x1", 220)
+          .attr("x2", 300)
+          .attr("y1", 100)
+          .attr("y2", 00)
+          .style("stroke", "black");
 
-			svg.append("path")
-					.attr("transform", "translate(0, 10)")
-					.attr("d", shape2path.line({x1: 220, x2: 300, y1: 100, y2: 0}))
-					.style("stroke", "black");
+      svg.append("path")
+          .attr("transform", "translate(0, 10)")
+          .attr("d", shape2path.line({x1: 220, x2: 300, y1: 100, y2: 0}))
+          .style("stroke", "black");
 
-			svg.append("polygon")
-					.attr("fill", "none")
-					.attr("stroke", "black")
-					.attr("points", "270,340 310,360 310,400 270,420 230,400 230,360");
+      svg.append("polygon")
+          .attr("fill", "none")
+          .attr("stroke", "black")
+          .attr("points", "270,340 310,360 310,400 270,420 230,400 230,360");
 
-			svg.append("path")
-					.attr("fill", "none")
-					.attr("stroke", "black")
-					.attr("transform", "translate(100, 0)")
-					.attr("d", shape2path.polygon({points: "270,340 310,360 310,400 270,420 230,400 230,360"}));
+      svg.append("path")
+          .attr("fill", "none")
+          .attr("stroke", "black")
+          .attr("transform", "translate(100, 0)")
+          .attr("d", shape2path.polygon({points: "270,340 310,360 310,400 270,420 230,400 230,360"}));
 
-			svg.append("polyline")
-					.attr("fill", "none")
-					.attr("stroke", "black")
-					.attr("points", "270,100 290,60 320,80 350,20");
+      svg.append("polyline")
+          .attr("fill", "none")
+          .attr("stroke", "black")
+          .attr("points", "270,100 290,60 320,80 350,20");
 
-			svg.append("path")
-					.attr("transform", "translate(50, 0)")
-					.attr("fill", "none")
-					.attr("stroke", "black")
-					.attr("d", shape2path.polyline({points: "270,100 290,60 320,80 350,20"}));
+      svg.append("path")
+          .attr("transform", "translate(50, 0)")
+          .attr("fill", "none")
+          .attr("stroke", "black")
+          .attr("d", shape2path.polyline({points: "270,100 290,60 320,80 350,20"}));
 
-		</script>
-	</body>
+    </script>
+  </body>
 </html>
