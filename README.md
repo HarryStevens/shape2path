@@ -4,7 +4,7 @@
 Convert SVG circle to SVG paths. Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
-###npm
+### npm
 ```bash
 npm install shape2path --save
 ```
