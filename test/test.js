@@ -25,4 +25,8 @@ describe("#shape2path", function() {
 	it ("should convert a line to a path", function(){
 		expect(shape2path.line({x1: 20, x2: 100, y1: 110, y2: 30})).to.equal("M20,110 L100,30");
 	});
+
+	it ("should convert a polygon to a path", function(){
+		expect(shape2path.polygon({points: "60,20 100,40 100,80 60,100 20,80 20,40"})).to.equal("M60,20 L100,40 L100,80 L60,100 L20,80 L20,40");
+	});
 });
