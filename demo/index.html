@@ -12,7 +12,7 @@
     </style>
   </head>
   <body>
-    <svg width="440" height="440"></svg>
+    <svg width="420" height="440"></svg>
     <script src="https://unpkg.com/d3-selection@1.1.0/build/d3-selection.min.js"></script>
     <script src="https://unpkg.com/shape2path@1.0.2/lib/shape2path.min.js"></script>
     <script>
@@ -99,7 +99,7 @@
           .attr("points", "270,100 290,60 320,80 350,20");
 
       svg.append("path")
-          .attr("transform", "translate(50, 0)")
+          .attr("transform", "translate(69, 0)")
           .attr("fill", "none")
           .attr("stroke", "black")
           .attr("d", shape2path.polyline({points: "270,100 290,60 320,80 350,20"}));
