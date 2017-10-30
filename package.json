@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "minify": "uglifyjs build/shape2path.js --preamble \"$(preamble)\" --comments -c -m -o build/shape2path.min.js",
+    "minify": "uglifyjs build/shape2path.js --preamble \"$(preamble)\" -c -m -o build/shape2path.min.js",
     "build": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" index.js --output.format umd --name 'shape2path' --output.file build/shape2path.js && npm run minify"
   },
   "repository": {
