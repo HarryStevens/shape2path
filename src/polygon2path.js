@@ -1,7 +1,7 @@
 export default function polygon2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.circle()");
-  } else if (options){
+  } else {
     if (options.points == undefined) {
       throw Error("You must pass points as an option to shape2path.polygon()");
     }

@@ -1,7 +1,7 @@
 export default function circle2Path(options) {
   if (!options){
     throw Error("You must pass options to shape2path.circle()");
-  } else if (options){
+  } else {
     if (options.cx == undefined) {
       throw Error("You must pass cx as an option to shape2path.circle()");
     } else if (options.cy == undefined) {

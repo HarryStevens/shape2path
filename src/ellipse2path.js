@@ -1,7 +1,7 @@
 export default function ellipse2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.ellipse()");
-  } else if (options){
+  } else {
     if (options.cx == undefined) {
       throw Error("You must pass cx as an option to shape2path.ellipse()");
     } else if (options.cy == undefined) {

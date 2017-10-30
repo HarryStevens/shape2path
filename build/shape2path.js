@@ -1,4 +1,4 @@
-// https://github.com/HarryStevens/shape2path#readme Version 2.0.0. Copyright 2017 Harry Stevens.
+// https://github.com/HarryStevens/shape2path#readme Version 2.0.1. Copyright 2017 Harry Stevens.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -8,7 +8,7 @@
 function circle2Path(options) {
   if (!options){
     throw Error("You must pass options to shape2path.circle()");
-  } else if (options){
+  } else {
     if (options.cx == undefined) {
       throw Error("You must pass cx as an option to shape2path.circle()");
     } else if (options.cy == undefined) {
@@ -25,7 +25,7 @@ function circle2Path(options) {
 function ellipse2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.ellipse()");
-  } else if (options){
+  } else {
     if (options.cx == undefined) {
       throw Error("You must pass cx as an option to shape2path.ellipse()");
     } else if (options.cy == undefined) {
@@ -63,7 +63,7 @@ function line2path(options){
 function polygon2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.circle()");
-  } else if (options){
+  } else {
     if (options.points == undefined) {
       throw Error("You must pass points as an option to shape2path.polygon()");
     }
@@ -75,7 +75,7 @@ function polygon2path(options){
 function polyline2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.polyline()");
-  } else if (options){
+  } else {
     if (options.points == undefined) {
       throw Error("You must pass points as an option to shape2path.polyline()");
     }
@@ -87,7 +87,7 @@ function polyline2path(options){
 function rect2Path(options){
   if (!options){
     throw Error("You must pass options to shape2path.rect()");
-  } else if (options){
+  } else {
     if (options.x == undefined) {
       throw Error("You must pass x as an option to shape2path.rect()");
     } else if (options.y == undefined) {

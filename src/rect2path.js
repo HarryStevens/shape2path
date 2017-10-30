@@ -1,7 +1,7 @@
 export default function rect2Path(options){
   if (!options){
     throw Error("You must pass options to shape2path.rect()");
-  } else if (options){
+  } else {
     if (options.x == undefined) {
       throw Error("You must pass x as an option to shape2path.rect()");
     } else if (options.y == undefined) {
