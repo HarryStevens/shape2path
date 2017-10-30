@@ -1,4 +1,4 @@
-// https://github.com/HarryStevens/shape2path#readme Version 2.0.1. Copyright 2017 Harry Stevens.
+// https://github.com/HarryStevens/shape2path#readme Version 2.0.2. Copyright 2017 Harry Stevens.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -44,7 +44,7 @@ function ellipse2path(options){
 function line2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.line()");
-  } else if (options){
+  } else {
     if (options.x1 == undefined) {
       throw Error("You must pass x1 as an option to shape2path.line()");
     } else if (options.x2 == undefined) {

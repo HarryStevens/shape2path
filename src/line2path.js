@@ -1,7 +1,7 @@
 export default function line2path(options){
   if (!options){
     throw Error("You must pass options to shape2path.line()");
-  } else if (options){
+  } else {
     if (options.x1 == undefined) {
       throw Error("You must pass x1 as an option to shape2path.line()");
     } else if (options.x2 == undefined) {
