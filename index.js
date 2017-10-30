@@ -1,0 +1,6 @@
+export {default as circle} from "./src/circle2path"
+export {default as ellipse} from "./src/ellipse2path"
+export {default as line} from "./src/line2path"
+export {default as polygon} from "./src/polygon2path"
+export {default as polyline} from "./src/polyline2path"
+export {default as rect} from "./src/rect2path"
