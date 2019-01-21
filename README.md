@@ -13,8 +13,8 @@ var shape2path = require("shape2path");
 ### Web browser
 You can use the CDN from unpkg.
 ```html
-<script src="https://unpkg.com/shape2path@2.0.5/build/shape2path.js"></script>
-<script src="https://unpkg.com/shape2path@2.0.5/build/shape2path.min.js"></script>
+<script src="https://unpkg.com/shape2path@2.0.7/build/shape2path.js"></script>
+<script src="https://unpkg.com/shape2path@2.0.7/build/shape2path.min.js"></script>
 ```
 If you'd rather host it yourself, download `shape2path.js` or `shape2path.min.js` from the [`build` directory](https://github.com/HarryStevens/shape2path/tree/master/build).
 ```html
