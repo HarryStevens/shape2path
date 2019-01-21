@@ -1,6 +1,6 @@
 {
   "name": "shape2path",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Convert SVG shapes to SVG paths",
   "main": "build/shape2path.js",
   "scripts": {
