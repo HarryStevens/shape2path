@@ -1,18 +1,14 @@
 import { NUM_DEFAULT } from './constants';
 
 export default function rect2Path(options){
-  if (!options){
-    throw Error("You must pass options to shape2path.rect()");
-  }
-
   var x = options.x || NUM_DEFAULT,
-    y = options.y || NUM_DEFAULT,
-    w = (options.width || NUM_DEFAULT) + x,
-    h = (options.height || NUM_DEFAULT) + y;
+      y = options.y || NUM_DEFAULT,
+      w = (options.width || NUM_DEFAULT) + x,
+      h = (options.height || NUM_DEFAULT) + y;
 
   if (options.rx || options.ry) {
     var rx = options.rx ? options.rx : options.ry,
-      ry = options.ry ? options.ry : options.rx;
+        ry = options.ry ? options.ry : options.rx;
 
     return "M" + (x + rx) + "," + y +
       " H" + (w - rx) +

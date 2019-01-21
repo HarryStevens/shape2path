@@ -59,36 +59,4 @@ describe("#shape2path", function() {
 	it("should convert a polyline to a path with empty options object", function(){
 		expect(shape2path.polyline({})).to.equal("M0 L0");
 	});
-
-	// ERRORS
-	// circle
-	it("should throw an error when running circle() without options", function(){
-		expect(function(){ shape2path.circle(); }).to.throw(Error);
-	});
-
-	// ellipse
-	it("should throw an error when running ellipse() without options", function(){
-		expect(function(){ shape2path.ellipse(); }).to.throw(Error);
-	});
-
-	// line
-	it("should throw an error when running line() without options", function(){
-		expect(function(){ shape2path.line(); }).to.throw(Error);
-	});
-
-	// polygon
-	it("should throw an error when running polygon() without options", function(){
-		expect(function(){ shape2path.polygon(); }).to.throw(Error);
-	});
-
-	// polyline
-	it("should throw an error when running polyline() without options", function(){
-		expect(function(){ shape2path.polyline(); }).to.throw(Error);
-	});
-
-	// rect
-	it("should throw an error when running rect() without options", function(){
-		expect(function(){ shape2path.rect(); }).to.throw(Error);
-	});
-
 });
