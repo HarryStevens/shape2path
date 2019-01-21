@@ -4,40 +4,33 @@
   "description": "Convert SVG shapes to SVG paths",
   "main": "build/shape2path.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "minify": "uglifyjs build/shape2path.js --preamble \"$(preamble)\" -c -m -o build/shape2path.min.js",
-    "build": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" index.js --output.format umd --name 'shape2path' --output.file build/shape2path.js && npm run minify"
+    "pretest": "rm -rf build && mkdir build && rollup -c --banner \"$(preamble)\"",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src",
+    "prepublish": "npm run test && uglifyjs build/shape2path.js -c -m -o build/shape2path.min.js",
+    "postpublish": "zip -j build/shape2path.zip -- LICENSE README.md build/shape2path.js build/shape2path.min.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "package-preamble": "0.1",
+    "rollup": "^0.62.0",
+    "tape": "4",
+    "uglify-js": "^2.8.11"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HarryStevens/shape2path.git"
   },
   "keywords": [
-    "svg"
+    "geometry"
   ],
   "author": {
     "name": "Harry Stevens",
-    "url": "https://harryjstevens.com/"
+    "email": "harryjosephstevens@gmail.com",
+    "url": "http://harryjstevens.com/"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HarryStevens/shape2path/issues"
   },
-  "homepage": "https://github.com/HarryStevens/shape2path#readme",
-  "engines": {
-    "node": ">=4.2.4"
-  },
-  "devDependencies": {
-    "chai": "^4.0.2",
-    "coveralls": "^2.13.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.4.2",
-    "package-preamble": "^0.1.0",
-    "rollup": "^0.50.0",
-    "uglifyjs": "^2.4.11"
-  },
-  "directories": {
-    "test": "test"
-  }
+  "homepage": "https://github.com/HarryStevens/shape2path#readme"
 }
