@@ -1,7 +1,5 @@
 # shape2path
-[![Build Status](https://travis-ci.org/HarryStevens/shape2path.svg?branch=master)](https://travis-ci.org/HarryStevens/shape2path) [![Coverage Status](https://coveralls.io/repos/github/HarryStevens/shape2path/badge.svg)](https://coveralls.io/github/HarryStevens/shape2path)
-
-Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Basic_shapes) to SVG [paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
+Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Basic_shapes) to SVG [paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05). [![Build Status](https://travis-ci.org/HarryStevens/shape2path.svg?branch=master)](https://travis-ci.org/HarryStevens/shape2path)
 
 ## Installation
 ### npm
@@ -15,8 +13,8 @@ var shape2path = require("shape2path");
 ### Web browser
 You can use the CDN from unpkg.
 ```html
-<script src="https://unpkg.com/shape2path@2.0.4/build/shape2path.js"></script>
-<script src="https://unpkg.com/shape2path@2.0.4/build/shape2path.min.js"></script>
+<script src="https://unpkg.com/shape2path@2.0.5/build/shape2path.js"></script>
+<script src="https://unpkg.com/shape2path@2.0.5/build/shape2path.min.js"></script>
 ```
 If you'd rather host it yourself, download `shape2path.js` or `shape2path.min.js` from the [`build` directory](https://github.com/HarryStevens/shape2path/tree/master/build).
 ```html
