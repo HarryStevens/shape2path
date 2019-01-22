@@ -1,4 +1,4 @@
-// https://github.com/HarryStevens/shape2path#readme Version 2.0.7. Copyright 2019 Harry Stevens.
+// https://github.com/HarryStevens/shape2path#readme Version 2.0.8. Copyright 2019 Harry Stevens.
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
