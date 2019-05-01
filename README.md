@@ -5,7 +5,7 @@ Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Ba
 If you use NPM, `npm install shape2path`. Otherwise, download the [latest release](https://github.com/HarryStevens/shape2path/blob/master/build/shape2path.zip). AMD, CommonJS, and vanilla environments are supported. In vanilla, a shape2path global is exported:
 
 ```html
-<script src="https://unpkg.com/shape2path@3.0.0/build/shape2path.min.js"></script>
+<script src="https://unpkg.com/shape2path@3.0.1/build/shape2path.min.js"></script>
 <script>
 
 const path = shape2path.circle()

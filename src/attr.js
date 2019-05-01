@@ -1,6 +1,6 @@
 // A utility function for setting attribute values.
 export function set(draw, attrs, name, value, defaultValue){
-  return value ? (attrs[name] = value, draw) : attrs[name] || defaultValue || 0;
+  return typeof value !== "undefined" ? (attrs[name] = value, draw) : attrs[name] || defaultValue || 0;
 }
 
 // A utility function for resolving attribute values.
