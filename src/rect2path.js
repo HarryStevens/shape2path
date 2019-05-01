@@ -10,8 +10,16 @@ export default function(){
           height = resolve(attrs, "height", datum);
     
     if (attrs.rx || attrs.ry){
-      let rx = resolve(attrs, "rx", datum),
-          ry = resolve(attrs, "ry", datum);
+      let rx, ry;
+      
+      if (attrs.rx && !attrs.ry) {
+        rx = resolve(attrs, "rx", datum);
+        ry = resolve(attrs, "rx", datum);        
+      }
+      else {
+        rx = resolve(attrs, "ry", datum);
+        ry = resolve(attrs, "ry", datum);
+      }
 
       if (rx * 2 > width) rx = rx - (rx * 2 - width) / 2;
       if (ry * 2 > height) ry = ry - (ry * 2 - height) / 2;
