@@ -1,4 +1,4 @@
-// https://github.com/HarryStevens/shape2path#readme Version 3.0.0. Copyright 2019 Harry Stevens.
+// https://github.com/HarryStevens/shape2path#readme Version 3.0.1. Copyright 2019 Harry Stevens.
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -7,7 +7,7 @@
 
   // A utility function for setting attribute values.
   function set(draw, attrs, name, value, defaultValue) {
-    return value ? (attrs[name] = value, draw) : attrs[name] || defaultValue || 0;
+    return typeof value !== "undefined" ? (attrs[name] = value, draw) : attrs[name] || defaultValue || 0;
   } // A utility function for resolving attribute values.
 
   function resolve(attrs, name, datum) {
