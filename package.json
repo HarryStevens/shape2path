@@ -10,9 +10,13 @@
     "postpublish": "zip -j build/shape2path.zip -- LICENSE README.md build/shape2path.js build/shape2path.min.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel": "^6.23.0",
     "eslint": "^5.12.1",
     "package-preamble": "0.1",
     "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^4.3.2",
     "tape": "4",
     "uglify-js": "^2.8.11"
   },

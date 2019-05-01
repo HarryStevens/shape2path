@@ -1,10 +1,20 @@
-import { NUM_DEFAULT } from './constants';
+import { resolve, set } from "./attr";
 
-export default function ellipse2path(options){
-  var cx = options.cx || NUM_DEFAULT,
-      cy = options.cy || NUM_DEFAULT,
-      rx = options.rx || NUM_DEFAULT,
-      ry = options.ry || NUM_DEFAULT;
+export default function(){
+  let attrs = {};
+
+  function draw(datum){
+    const cx = resolve(attrs, "cx", datum),
+          cy = resolve(attrs, "cy", datum),
+          rx = resolve(attrs, "rx", datum),
+          ry = resolve(attrs, "ry", datum);
     
-  return "M" + (cx - rx) + "," + cy + " a" + rx + "," + ry + " 0 1,0 " + (rx * 2) + ",0 a" + rx + "," + ry + " 0 1,0 -" + (rx * 2) + ",0";
+    return `M${cx - rx},${cy} a${rx},${ry} 0 1,0 ${rx * 2},0 a${rx},${ry} 0 1,0 ${-rx * 2},0`;
+  }
+  
+  draw.attr = function(name, value){
+    return set(draw, attrs, name, value);
+  }
+  
+  return draw;
 }

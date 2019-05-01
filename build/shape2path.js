@@ -5,80 +5,163 @@
   (factory((global.shape2path = {})));
 }(this, (function (exports) { 'use strict';
 
-  const NUM_DEFAULT = 0;
-  // The true default is an empty string, but it results in invalid path, so use
-  // "0 0"
-  const POINTS_DEFAULT = "0 0";
+  // A utility function for setting attribute values.
+  function set(draw, attrs, name, value, defaultValue) {
+    return value ? (attrs[name] = value, draw) : attrs[name] || defaultValue || 0;
+  } // A utility function for resolving attribute values.
 
-  function circle2Path(options) {
-    var cx = options.cx || NUM_DEFAULT,
-        cy = options.cy || NUM_DEFAULT,
-        r = options.r || NUM_DEFAULT;
-
-    return "M" + cx + "," + cy + " m" + (-r) + ",0 a" + r + "," + r + " 0 1,0 " + (r * 2) + ",0 a" + r + "," + r + " 0 1,0 " + (-r * 2) + ",0";
+  function resolve(attrs, name, datum) {
+    return !attrs[name] ? 0 : typeof attrs[name] === "function" ? attrs[name](datum) : attrs[name];
   }
 
-  function ellipse2path(options){
-    var cx = options.cx || NUM_DEFAULT,
-        cy = options.cy || NUM_DEFAULT,
-        rx = options.rx || NUM_DEFAULT,
-        ry = options.ry || NUM_DEFAULT;
-      
-    return "M" + (cx - rx) + "," + cy + " a" + rx + "," + ry + " 0 1,0 " + (rx * 2) + ",0 a" + rx + "," + ry + " 0 1,0 -" + (rx * 2) + ",0";
-  }
+  function circle2path () {
+    var attrs = {};
 
-  function line2path(options){
-  var x1 = options.x1 || NUM_DEFAULT,
-      x2 = options.x2 || NUM_DEFAULT,
-      y1 = options.y1 || NUM_DEFAULT,
-      y2 = options.y2 || NUM_DEFAULT;
-
-    return "M" + x1 + "," + y1 + " L" + x2 + "," + y2;
-  }
-
-  function polygon2path(options){
-    var points = options.points || POINTS_DEFAULT;
-    
-    return points.split(" ").map(function(point, i){ return i == 0 ? "M" + point : "L" + point; }).join(" ") + " Z";
-  }
-
-  function polyline2path(options){
-    var points = options.points || POINTS_DEFAULT;
-    
-    return points.split(" ").map(function(point, i){ return i == 0 ? "M" + point : "L" + point; }).join(" ");
-  }
-
-  function rect2Path(options){
-    var x = options.x || NUM_DEFAULT,
-        y = options.y || NUM_DEFAULT,
-        w = (options.width || NUM_DEFAULT) + x,
-        h = (options.height || NUM_DEFAULT) + y;
-
-    if (options.rx || options.ry) {
-      var rx = options.rx ? options.rx : options.ry,
-          ry = options.ry ? options.ry : options.rx;
-
-      return "M" + (x + rx) + "," + y +
-        " H" + (w - rx) +
-        " C" + (w - rx) + "," + y + " " + w + "," + y + " " + w + "," + (y + ry) +
-        " V" + (h - ry) +
-        " C" + w + "," + (h - ry) + " " + w + "," + h + " " + (w - rx) + "," + h +
-        " H" + (x + rx) +
-        " C" + (x + rx) + "," + h + " " + x + "," + h + " " + x + "," + (h - ry) +
-        " V" + (y + ry) +
-        " C" + x + "," + (y + ry) + " " + x + "," + y + " " + (x + rx) + "," + y;
-    } else {
-      return "M" + x + "," + y + " H" + w + " V" + h + " H" + x + " Z";
+    function draw(datum) {
+      var cx = resolve(attrs, "cx", datum),
+          cy = resolve(attrs, "cy", datum),
+          r = resolve(attrs, "r", datum);
+      return "M".concat(cx, ",").concat(cy, " m").concat(-r, ",0 a").concat(r, ",").concat(r, " 0 1,0 ").concat(r * 2, ",0 a").concat(r, ",").concat(r, " 0 1,0 ").concat(-r * 2, ",0");
     }
 
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value);
+    };
+
+    return draw;
   }
 
-  exports.circle = circle2Path;
+  function ellipse2path () {
+    var attrs = {};
+
+    function draw(datum) {
+      var cx = resolve(attrs, "cx", datum),
+          cy = resolve(attrs, "cy", datum),
+          rx = resolve(attrs, "rx", datum),
+          ry = resolve(attrs, "ry", datum);
+      return "M".concat(cx - rx, ",").concat(cy, " a").concat(rx, ",").concat(ry, " 0 1,0 ").concat(rx * 2, ",0 a").concat(rx, ",").concat(ry, " 0 1,0 ").concat(-rx * 2, ",0");
+    }
+
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value);
+    };
+
+    return draw;
+  }
+
+  function line2path () {
+    var attrs = {};
+
+    function draw(datum) {
+      var x1 = resolve(attrs, "x1", datum),
+          y1 = resolve(attrs, "y1", datum),
+          x2 = resolve(attrs, "x2", datum),
+          y2 = resolve(attrs, "y2", datum);
+      return "M".concat(x1, ",").concat(y1, " L").concat(x2, ",").concat(y2);
+    }
+
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value);
+    };
+
+    return draw;
+  }
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function polygon2path () {
+    var attrs = {};
+
+    function draw(datum) {
+      var points = resolve(attrs, "points", datum);
+
+      if (!points.length) {
+        return "M0,0 L0,0 Z";
+      } else if (_typeof(points) === "object") {
+        return "M".concat(points.join(" L"), " Z");
+      } else if (typeof points === "string") {
+        return points.split(" ").map(function (p, i) {
+          return i == 0 ? "M" + p : "L" + p;
+        }).join(" ") + " Z";
+      }
+    }
+
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value, "0,0");
+    };
+
+    return draw;
+  }
+
+  function polyline2path () {
+    var attrs = {};
+
+    function draw(datum) {
+      var points = resolve(attrs, "points", datum);
+
+      if (!points.length) {
+        return "M0,0 L0,0";
+      } else if (_typeof(points) === "object") {
+        return "M".concat(points.join(" L"));
+      } else if (typeof points === "string") {
+        return points.split(" ").map(function (p, i) {
+          return i == 0 ? "M" + p : "L" + p;
+        }).join(" ");
+      }
+    }
+
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value, "0,0");
+    };
+
+    return draw;
+  }
+
+  function rect2path () {
+    var attrs = {};
+
+    function draw(datum) {
+      var x = resolve(attrs, "x", datum),
+          y = resolve(attrs, "y", datum),
+          width = resolve(attrs, "width", datum),
+          height = resolve(attrs, "height", datum);
+
+      if (attrs.rx || attrs.ry) {
+        var rx = resolve(attrs, "rx", datum),
+            ry = resolve(attrs, "ry", datum);
+        if (rx * 2 > width) rx = rx - (rx * 2 - width) / 2;
+        if (ry * 2 > height) ry = ry - (ry * 2 - height) / 2;
+        return "M".concat(x + rx, ",").concat(y, " h").concat(width - rx * 2, " s").concat(rx, ",0 ").concat(rx, ",").concat(ry, " v").concat(height - ry * 2, " s0,").concat(ry, " ").concat(-rx, ",").concat(ry, " h").concat(-width + rx * 2, " s").concat(-rx, ",0 ").concat(-rx, ",").concat(-ry, " v").concat(-height + ry * 2, " s0,").concat(-ry, " ").concat(rx, ",").concat(-ry);
+      }
+
+      return "M".concat(x, ",").concat(y, " h").concat(width, " v").concat(height, " H").concat(x, " Z");
+    }
+
+    draw.attr = function (name, value) {
+      return set(draw, attrs, name, value);
+    };
+
+    return draw;
+  }
+
+  exports.circle = circle2path;
   exports.ellipse = ellipse2path;
   exports.line = line2path;
   exports.polygon = polygon2path;
   exports.polyline = polyline2path;
-  exports.rect = rect2Path;
+  exports.rect = rect2path;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

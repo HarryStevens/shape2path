@@ -1,26 +1,30 @@
-import { NUM_DEFAULT } from './constants';
+import { resolve, set } from "./attr";
 
-export default function rect2Path(options){
-  var x = options.x || NUM_DEFAULT,
-      y = options.y || NUM_DEFAULT,
-      w = (options.width || NUM_DEFAULT) + x,
-      h = (options.height || NUM_DEFAULT) + y;
+export default function(){
+  const attrs = {};
+  
+  function draw(datum){
+    const x = resolve(attrs, "x", datum),
+          y = resolve(attrs, "y", datum),
+          width = resolve(attrs, "width", datum),
+          height = resolve(attrs, "height", datum);
+    
+    if (attrs.rx || attrs.ry){
+      let rx = resolve(attrs, "rx", datum),
+          ry = resolve(attrs, "ry", datum);
 
-  if (options.rx || options.ry) {
-    var rx = options.rx ? options.rx : options.ry,
-        ry = options.ry ? options.ry : options.rx;
+      if (rx * 2 > width) rx = rx - (rx * 2 - width) / 2;
+      if (ry * 2 > height) ry = ry - (ry * 2 - height) / 2;
 
-    return "M" + (x + rx) + "," + y +
-      " H" + (w - rx) +
-      " C" + (w - rx) + "," + y + " " + w + "," + y + " " + w + "," + (y + ry) +
-      " V" + (h - ry) +
-      " C" + w + "," + (h - ry) + " " + w + "," + h + " " + (w - rx) + "," + h +
-      " H" + (x + rx) +
-      " C" + (x + rx) + "," + h + " " + x + "," + h + " " + x + "," + (h - ry) +
-      " V" + (y + ry) +
-      " C" + x + "," + (y + ry) + " " + x + "," + y + " " + (x + rx) + "," + y;
-  } else {
-    return "M" + x + "," + y + " H" + w + " V" + h + " H" + x + " Z";
+      return `M${x + rx},${y} h${width - rx * 2} s${rx},0 ${rx},${ry} v${height - ry * 2} s0,${ry} ${-rx},${ry} h${-width + rx * 2} s${-rx},0 ${-rx},${-ry} v${-height + ry * 2} s0,${-ry} ${rx},${-ry}`;
+    }
+    
+    return `M${x},${y} h${width} v${height} H${x} Z`;
   }
-
+  
+  draw.attr = function(name, value){
+    return set(draw, attrs, name, value);
+  }
+  
+  return draw;
 }
