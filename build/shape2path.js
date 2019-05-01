@@ -1,4 +1,4 @@
-// https://github.com/HarryStevens/shape2path#readme Version 3.0.1. Copyright 2019 Harry Stevens.
+// https://github.com/HarryStevens/shape2path#readme Version 3.0.2. Copyright 2019 Harry Stevens.
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -139,8 +139,8 @@
           height = resolve(attrs, "height", datum);
 
       if (attrs.rx || attrs.ry) {
-        var rx = resolve(attrs, "rx", datum),
-            ry = resolve(attrs, "ry", datum);
+        var rx = resolve(attrs, attrs.rx ? "rx" : "ry", datum),
+            ry = resolve(attrs, attrs.ry ? "ry" : "rx", datum);
         if (rx * 2 > width) rx = rx - (rx * 2 - width) / 2;
         if (ry * 2 > height) ry = ry - (ry * 2 - height) / 2;
         return "M".concat(x + rx, ",").concat(y, " h").concat(width - rx * 2, " s").concat(rx, ",0 ").concat(rx, ",").concat(ry, " v").concat(height - ry * 2, " s0,").concat(ry, " ").concat(-rx, ",").concat(ry, " h").concat(-width + rx * 2, " s").concat(-rx, ",0 ").concat(-rx, ",").concat(-ry, " v").concat(-height + ry * 2, " s0,").concat(-ry, " ").concat(rx, ",").concat(-ry);
