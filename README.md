@@ -5,7 +5,7 @@ Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Ba
 If you use NPM, `npm install shape2path`. Otherwise, download the [latest release](https://github.com/HarryStevens/shape2path/blob/master/build/shape2path.zip). AMD, CommonJS, and vanilla environments are supported. In vanilla, a shape2path global is exported:
 
 ```html
-<script src="https://unpkg.com/shape2path@3.0.3/build/shape2path.min.js"></script>
+<script src="https://unpkg.com/shape2path@3.0.4/build/shape2path.min.js"></script>
 <script>
 
 const path = shape2path.circle()
@@ -56,7 +56,7 @@ If <em>value</em> is specified, sets the attribute <em>name</em> to the specifie
 shape2path.circle()
   .attr(cx, 10);
 ```
-If the <em>value</em> is constant, sets the position to that constant. Constants must be specified as numbers except unless you are setting a points attribute, in which case you can set the constant to a string (e.g. `"0,0 1,1"`) or an array of points (e.g. `[[0,0], [1,1]]`). 
+If the <em>value</em> is constant, sets the position to that constant. Constants must be specified as numbers unless you are setting a points attribute, in which case you can set the constant to a string (e.g. `"0,0 1,1"`) or an array of points (e.g. `[[0,0], [1,1]]`). 
 
 If <em>value</em> is a function, the function is evaluated for the passed datum, and the function's return value is used to set the attributes value. For instance, to set a circle generator's cx attribute to a datum's "left" attribute:
 ```js
