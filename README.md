@@ -27,7 +27,7 @@ Creates a new [circle](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/
 
 <a name="ellipse" href="#ellipse">#</a> shape2path.<b>ellipse</b>() [<>](https://github.com/HarryStevens/shape2path/blob/master/src/ellipse2path.js "Source")
 
-Creates a new [ellipse](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) generator whose [cx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cx), [cy](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cy), ["rx"](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx), and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry) attributes are set to 0.
+Creates a new [ellipse](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse) generator whose [cx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cx), [cy](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cy), [rx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx), and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry) attributes are set to 0.
 
 <a name="line" href="#line">#</a> shape2path.<b>line</b>() [<>](https://github.com/HarryStevens/shape2path/blob/master/src/line2path.js "Source")
 
@@ -43,7 +43,7 @@ Creates a new [polyline](https://developer.mozilla.org/en-US/docs/Web/SVG/Elemen
 
 <a name="rect" href="#rect">#</a> shape2path.<b>rect</b>() [<>](https://github.com/HarryStevens/shape2path/blob/master/src/rect2path.js "Source")
 
-Creates a new [rect](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) generator whose [x](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x), [y](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y), [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width), [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height), ["rx"](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx), and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry) attributes default to 0.
+Creates a new [rect](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) generator whose [x](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/x), [y](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/y), [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width), [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height), [rx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx), and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry) attributes default to 0.
 
 <a name="_shape" href="#_shape">#</a> <em>shape</em>([<em>datum</em>]) [<>](https://github.com/HarryStevens/shape2path/blob/master/src/circle2path.js#L6 "Source")
 
