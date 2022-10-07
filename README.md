@@ -58,7 +58,7 @@ shape2path.circle()
 ```
 If the <em>value</em> is constant, sets the position to that constant. Constants must be specified as numbers unless you are setting a points attribute, in which case you can set the constant to a string (e.g. `"0,0 1,1"`) or an array of points (e.g. `[[0,0], [1,1]]`). 
 
-If <em>value</em> is a function, the function is evaluated for the passed datum, and the function's return value is used to set the attributes value. For instance, to set a circle generator's cx attribute to a datum's "left" attribute:
+If <em>value</em> is a function, the function is evaluated for the passed datum, and the function's return value is used to set the attribute's value. For instance, to set a circle generator's cx attribute to a datum's "left" attribute:
 ```js
 shape2path.circle()
   .attr("cx", d => d.left)
