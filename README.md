@@ -1,5 +1,5 @@
 # shape2path
-Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Basic_shapes) to SVG [paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). Check out [this demo](https://bl.ocks.org/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05). [![Build Status](https://travis-ci.org/HarryStevens/shape2path.svg?branch=master)](https://travis-ci.org/HarryStevens/shape2path)
+Convert SVG [shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Element#Basic_shapes) to SVG [paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path). Check out [this demo](https://blocks.roadtolarissa.com/HarryStevens/944fc151f210ddf6bd6ebaeda12c3d05).
 
 ## Installation
 If you use NPM, `npm install shape2path`. Otherwise, download the [latest release](https://github.com/HarryStevens/shape2path/blob/master/build/shape2path.zip). AMD, CommonJS, and vanilla environments are supported. In vanilla, a shape2path global is exported:
