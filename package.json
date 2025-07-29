@@ -14,7 +14,7 @@
     "@babel/preset-env": "^7.4.3",
     "babel": "^6.23.0",
     "package-preamble": "0.1",
-    "rollup": "^0.62.0",
+    "rollup": "^3.29.5",
     "rollup-plugin-babel": "^4.3.2",
     "tape": "4",
     "uglify-js": "^2.8.11"
